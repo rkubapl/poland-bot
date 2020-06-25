@@ -3,10 +3,10 @@ from discord import Forbidden, HTTPException
 from discord.ext.commands import Cog, command, has_permissions, bot_has_permissions
 
 from GameMaster.templates.basic import info_em, error_em, success_em, please_wait_em
-from GameMaster.utils.database import purge_enabled, purge_settings, purge_enable, purge_disable
+from GameMaster.utils.database.purge import *
 
 
-class Purge(Cog):
+class Czystka(Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -129,4 +129,4 @@ class Purge(Cog):
 
 
 def setup(bot):
-    bot.add_cog(Purge(bot))
+    bot.add_cog(Czystka(bot))
